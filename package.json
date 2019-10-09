@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+  "brain-games": "dist/bin/brain-games.js"
+  },
   "files": [
     "dist"
   ],
