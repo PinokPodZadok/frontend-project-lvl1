@@ -1,5 +1,5 @@
 {
-  "name": "Smirnovfrontend-project-lvl1",
+  "name": "Smirnovfrontend-project-lvl",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PinokPodZadok/frontend-project-lvl1.git"
+    "url": "git+https://github.com/PinokPodZadok/frontend-project-lvl.git"
   },
   "author": "Smirnov Nikolay",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PinokPodZadok/frontend-project-lvl1/issues"
+    "url": "https://github.com/PinokPodZadok/frontend-project-lvl/issues"
   },
-  "homepage": "https://github.com/PinokPodZadok/frontend-project-lvl1#readme",
+  "homepage": "https://github.com/PinokPodZadok/frontend-project-lvl#readme",
   "devDependencies": {
     "@babel/cli": "^7.6.3",
     "@babel/core": "^7.6.3",
