@@ -6,7 +6,3 @@ node_js:
 
 script:
   - make lint
-
-notifications:
-email:
-  - itutk@mail.ru
