@@ -1,2 +1,2 @@
 #!/usr/bin/node
-import index from '../index';
+import {} from '../index';
