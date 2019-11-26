@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import { actual } from '../index';
 
 const getRandomInt = (min, max) => {
-  Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 };
 const questionGame = () => {
   let win = 0;
