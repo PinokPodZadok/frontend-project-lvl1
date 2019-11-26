@@ -1,9 +1,7 @@
 import readlineSync from 'readline-sync';
 import { actual } from '../index';
 
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min)) + min;
-};
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const questionGame = () => {
   let win = 0;
   while (win < 3) {
