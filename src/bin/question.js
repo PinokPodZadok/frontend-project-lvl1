@@ -18,7 +18,7 @@ while (win < 3) {
     {
         console.log(`'${ans}' is wrong answer ;(. Correct answer was 'yes'.`);
         console.log(`Let's try again, ${actual}!`);
-        win = 1;
+        win = 0;
     } else if (num % 2 !== 0 && ans === 'yes') {
         console.log(`'${ans}' is wrong answer ;(. Correct answer was 'yes'.`);
         console.log(`Let's try again, ${actual}!`);
@@ -35,4 +35,4 @@ win = 0;
 console.log(`Congratulations, ${actual}!`);
 };
 questionGame();
-console.log(`Congratulations, ${actual}!`);
+
