@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/npx babel-node
 import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
