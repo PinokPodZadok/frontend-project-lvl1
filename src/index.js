@@ -1,13 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const name = "inkognito";
-const nameFun = () => {
-    return name = readlineSync.question('May I have your name? ');
-}
-
 const brainGames = () => {
 console.log('Welcome to the Brain Games!');
-nameFun();
+const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
 console.log('');
 };
