@@ -1,2 +1,3 @@
 #!/usr/bin/node
-import {} from '../index';
+import { brainGames } from '../index';
+brainGames();
