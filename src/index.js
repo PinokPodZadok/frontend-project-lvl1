@@ -1,16 +1,20 @@
 import readlineSync from 'readline-sync';
 
+const name = "inkognito";
+const nameFun = () => {
+    return name = readlineSync.question('May I have your name? ');
+}
+
 const brainGames = () => {
-const actual = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${actual}!`);
+console.log('Welcome to the Brain Games!');
+nameFun();
+console.log(`Hello, ${name}!`);
 console.log('');
 };
 
 const brainEven = () => {
-console.log('Welcome to the Brain Games!');
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 console.log('');
-const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
 console.log('');
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;

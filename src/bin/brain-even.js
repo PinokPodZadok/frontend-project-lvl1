@@ -1,3 +1,5 @@
 #!/usr/bin/node
-import { brainEven } from '../index';
+import { brainEven, brainGames } from '../index';
+
+brainGames();
 brainEven();
