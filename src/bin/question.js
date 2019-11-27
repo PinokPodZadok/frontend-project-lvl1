@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { actual } from '../index';
+import actual from '../index';
 
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const questionGame = () => {
