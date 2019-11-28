@@ -1,22 +1,21 @@
 import readlineSync from 'readline-sync';
 
-const brainGames = () => {
+let name = '';
+
+const welcome = () => {
   console.log('Welcome to the Brain Games!');
-  
-  const name = readlineSync.question('May I have your name? ');
-  
+  name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log('');
 };
 
+const brainGames = () => {
+  welcome();
+};
+
 const brainEven = () => {
+  welcome();
   
-  console.log('Welcome to the Brain Games!');
-  
-  const name = readlineSync.question('May I have your name? ');
-  
-  console.log(`Hello, ${name}!`);
-  console.log('');
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   console.log('');
   
@@ -58,12 +57,8 @@ const brainEven = () => {
 };
 
 const brainCalc = () => {
-  console.log('Welcome to the Brain Games!');
+  welcome();
   
-  const name = readlineSync.question('May I have your name? ');
-  
-  console.log(`Hello, ${name}!`);
-  console.log('');
   console.log('What is the result of the expression?');
   console.log('');
   
