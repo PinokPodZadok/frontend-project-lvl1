@@ -71,7 +71,11 @@ const brainCalc = () => {
 
     const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
     
-    const intSymbol = getRandomInt(1, 3);
+    
+
+    let win = 0;
+    while (win < 3) {
+      const intSymbol = getRandomInt(1, 3);
     const numFirst = getRandomInt(1, 999);
     const numTwo = getRandomInt(1, 999);
     
@@ -95,23 +99,22 @@ const brainCalc = () => {
       }
       return sym;
     }
-
-    let win = 0;
-    while (win < 3) {
       const questionGame = result(intSymbol, numFirst, numTwo);
       console.log(`Question: ${numFirst} ${symbol(intSymbol)} ${numTwo} `);
       
       const ans = readlineSync.question('Your answer: ');
-      if (ans === questionGame) {
+      if (ans == questionGame) {
         correctStr();
         win += 1;
-      } else {
+      } else  if (ans != questionGame) {
         console.log(`'${ans}' is wrong answer ;(. Correct answer was '${questionGame}'.`);
         console.log(`Let's try again, ${name}!`);
+        win = 4;
       }
     }
+    if (win !== 4) {
     console.log(`Congratulations, ${name}!`);
-
+    }
   }
     brainCalcGame();
   };
