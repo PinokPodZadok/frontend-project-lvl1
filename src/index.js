@@ -19,8 +19,6 @@ const brainEven = () => {
   console.log('');
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   console.log('');
-  console.log(`Hello, ${name}!`);
-  console.log('');
   
   const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
   
@@ -73,25 +71,35 @@ const brainCalc = () => {
 
     const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
     
-    const intSymbol = getRandomInt(1,3);
+    const intSymbol = getRandomInt(1, 3);
     const numFirst = getRandomInt(1, 999);
     const numTwo = getRandomInt(1, 999);
     
     const result = (intSymbol, numFirst, numTwo) => {
       if (intSymbol === 1) {
         return numFirst + numTwo;
-      } else if (int === 2) {
+      } else if (intSymbol === 2) {
         return numFirst - numTwo;
       } 
       return numFirst * numTwo;
     }
     const correctStr = () => console.log('Correct!');
    
-    
+    const symbol = (intSymbol) => {
+      let sym = '*';
+      if (intSymbol === 1) {
+        sym = '+' ;
+      } 
+      if ( intSymbol === 2) {
+        sym = '-';
+      }
+      return sym;
+    }
+
     let win = 0;
     while (win < 3) {
       const questionGame = result(intSymbol, numFirst, numTwo);
-      console.log(`Question: ${questionGame}`);
+      console.log(`Question: ${numFirst} ${symbol(intSymbol)} ${numTwo} `);
       
       const ans = readlineSync.question('Your answer: ');
       if (ans === questionGame) {
@@ -99,8 +107,7 @@ const brainCalc = () => {
         win += 1;
       } else {
         console.log(`'${ans}' is wrong answer ;(. Correct answer was '${questionGame}'.`);
-        console.log(`Let's try again, Sam!`);
-        brake;
+        console.log(`Let's try again, ${name}!`);
       }
     }
     console.log(`Congratulations, ${name}!`);
