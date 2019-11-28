@@ -9,7 +9,7 @@ const massegeWelcome = () => {
 };
 const massegeCorrect = () => console.log('Correct!');
 let writeAnswer = '';
-const massageCongratulation = () => console.log(`Congratulations, ${name}!`);
+const massegeCongratulation = () => console.log(`Congratulations, ${name}!`);
 const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(. Correct answer was '${b}'.\nLet's try again, ${c}!`);
 
 const brainGames = () => {
@@ -30,24 +30,14 @@ const brainEven = () => {
       num % 2 === 0 ? writeAnswer = 'yes' : writeAnswer = 'no';
       const ans = readlineSync.question('Your answer: ');
 
-      if (num % 2 === 0 && ans === 'yes') {
+      if (ans === writeAnswer) {
         massegeCorrect();
         win += 1;
-      } else if (num % 2 === 0 && ans === 'no') {
-        massegeError(ans, writeAnswer, name);
-        win = 0;
-      } else if (num % 2 !== 0 && ans === 'yes') {
-        massegeError(ans, writeAnswer, name);
-        win = 0;
-      } else if (num % 2 !== 0 && ans === 'no') {
-        massegeCorrect();
-        win += 1;
-      } else {
-        massegeError(ans, writeAnswer, name);
-        win = 0;
-      }
+        } else {
+          massegeError(ans, writeAnswer, name)
+          win = 0;}
     }
-    congratulation();
+    massegeCongratulation();
   };
   evenGame();
 };
@@ -96,7 +86,7 @@ const brainCalc = () => {
       }
     }
     if (win !== 4) {
-      massageCongratulation();
+      massegeCongratulation();
     }
   };
   brainCalcGame();
