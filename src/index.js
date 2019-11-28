@@ -1,13 +1,16 @@
 import readlineSync from 'readline-sync';
 
-let name = '';
-
+let name = 'inkognito';
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const welcome = () => {
   console.log('Welcome to the Brain Games!');
   name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log('');
+  console.log(`Hello, ${name}!\n`);
 };
+const correctStr = () => console.log('Correct!');
+let writeAnswer = '';
+const congratulation = () => console.log(`Congratulations, ${name}!`);
+const massegeError = (ans, writeAnswer, name) => console.log(`'${ans}' is wrong answer ;(. Correct answer was '${writeAnswer}'.\nLet's try again, ${name}!`)
 
 const brainGames = () => {
   welcome();
@@ -16,42 +19,37 @@ const brainGames = () => {
 const brainEven = () => {
   welcome();
   
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  console.log('');
-  
-  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-  
+  console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
+
   const evenGame = () => {
-    const correctStr = () => console.log('Correct!');
+    
     let win = 0;
     
     while (win < 3) {
       
       const num = getRandomInt(1, 999);
       console.log(`Question: ${num}`);
-      
+      num % 2 === 0? writeAnswer = 'yes': writeAnswer = 'no';
       const ans = readlineSync.question('Your answer: ');
+
       if (num % 2 === 0 && ans === 'yes') {
         correctStr();
         win += 1;
       } else if (num % 2 === 0 && ans === 'no') {
-        console.log(`'${ans}' is wrong answer ;(. Correct answer was 'yes'.`);
-        console.log(`Let's try again, ${name}!`);
+        massegeError(ans, writeAnswer, name);
         win = 0;
       } else if (num % 2 !== 0 && ans === 'yes') {
-        console.log(`'${ans}' is wrong answer ;(. Correct answer was 'yes'.`);
-        console.log(`Let's try again, ${name}!`);
+        massegeError(ans, writeAnswer, name);
         win = 0;
       } else if (num % 2 !== 0 && ans === 'no') {
         correctStr();
         win += 1;
       } else {
-        console.log(`'${ans}' is wrong answer ;(. Correct answer was 'yes'.`);
-        console.log(`Let's try again, ${name}!`);
+        massegeError(ans, writeAnswer, name);
         win = 0;
       }
     }
-    console.log(`Congratulations, ${name}!`);
+    congratulation();
   };
   evenGame();
 };
@@ -59,21 +57,15 @@ const brainEven = () => {
 const brainCalc = () => {
   welcome();
   
-  console.log('What is the result of the expression?');
-  console.log('');
+  console.log('What is the result of the expression?\n');
   
   const brainCalcGame = () => {
-
-    const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-    
-    
 
     let win = 0;
     while (win < 3) {
       const intSymbol = getRandomInt(1, 3);
       const numFirst = getRandomInt(1, 999);
       const numTwo = getRandomInt(1, 999);
-      const correctStr = () => console.log('Correct!');
 
       const result = (intSymbol, numFirst, numTwo) => {
         if (intSymbol === 1) {
@@ -94,21 +86,20 @@ const brainCalc = () => {
         }
         return sym;
       }
-      const questionGame = result(intSymbol, numFirst, numTwo);
+      writeAnswer = result(intSymbol, numFirst, numTwo);
       console.log(`Question: ${numFirst} ${symbol(intSymbol)} ${numTwo} `);
       
       const ans = readlineSync.question('Your answer: ');
-      if (ans == questionGame) {
+      if (ans == writeAnswer) {
         correctStr();
         win += 1;
-      } else  if (ans != questionGame) {
-        console.log(`'${ans}' is wrong answer ;(. Correct answer was '${questionGame}'.`);
-        console.log(`Let's try again, ${name}!`);
+      } else  if (ans != writeAnswer) {
+        massegeError(ans, writeAnswer, name);
         win = 4;
       }
     }
     if (win !== 4) {
-    console.log(`Congratulations, ${name}!`);
+      congratulation();
     }
   }
     brainCalcGame();
