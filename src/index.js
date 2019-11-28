@@ -76,29 +76,29 @@ const brainCalc = () => {
     let win = 0;
     while (win < 3) {
       const intSymbol = getRandomInt(1, 3);
-    const numFirst = getRandomInt(1, 999);
-    const numTwo = getRandomInt(1, 999);
-    
-    const result = (intSymbol, numFirst, numTwo) => {
-      if (intSymbol === 1) {
-        return numFirst + numTwo;
-      } else if (intSymbol === 2) {
-        return numFirst - numTwo;
-      } 
-      return numFirst * numTwo;
-    }
-    const correctStr = () => console.log('Correct!');
-   
-    const symbol = (intSymbol) => {
-      let sym = '*';
-      if (intSymbol === 1) {
-        sym = '+' ;
-      } 
-      if ( intSymbol === 2) {
-        sym = '-';
+      const numFirst = getRandomInt(1, 999);
+      const numTwo = getRandomInt(1, 999);
+      const correctStr = () => console.log('Correct!');
+
+      const result = (intSymbol, numFirst, numTwo) => {
+        if (intSymbol === 1) {
+          return numFirst + numTwo;
+        } else if (intSymbol === 2) {
+          return numFirst - numTwo;
+        } 
+        return numFirst * numTwo;
       }
-      return sym;
-    }
+    
+      const symbol = (intSymbol) => {
+        let sym = '*';
+        if (intSymbol === 1) {
+          sym = '+' ;
+        } 
+        if ( intSymbol === 2) {
+         sym = '-';
+        }
+        return sym;
+      }
       const questionGame = result(intSymbol, numFirst, numTwo);
       console.log(`Question: ${numFirst} ${symbol(intSymbol)} ${numTwo} `);
       
