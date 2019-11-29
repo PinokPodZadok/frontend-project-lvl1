@@ -2,8 +2,6 @@ import readlineSync from 'readline-sync';
 
 // Глобальная переменная для хранения имени пользователя.
 let nameUser = 'inkognito';
-// Глобальная переменная для хранения правильного ответа.
-let writeAnswer = '';
 // Функция приветствия.
 const massegeWelcome = () => {
   console.log('Welcome to the Brain Games!');
@@ -30,6 +28,8 @@ const brainEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
   // Функция игры.
   const evenGame = () => {
+    // Переменная для хранения правильного ответа.
+    let writeAnswer = 'unknow';
     // Переменная с количеством правильных ответов.
     let win = 0;
     // Цикл для подсчета правильных ответов.
@@ -73,6 +73,8 @@ const brainCalc = () => {
   console.log('What is the result of the expression?\n');
   // Функция игры.
   const brainCalcGame = () => {
+    // Переменная для хранения правильного ответа.
+    let writeAnswer = 'unknow';
     // Переменная с количеством правильных ответов.
     let win = 0;
     // Цикл для подсчета правильных ответов.
@@ -130,7 +132,6 @@ const brainCalc = () => {
   brainCalcGame();
 };
 
-
 // Функция игры brain-gcd
 const brainGcd = () => {
   // Вывод приветствия.
@@ -139,40 +140,34 @@ const brainGcd = () => {
   console.log('Find the greatest common divisor of given numbers.\n');
   // Функция игры.
   const gcdGame = () => {
-  // Переменная с количеством правильных ответов.
+    // Переменная для хранения правильного ответа.
+    let writeAnswer = 'unknow';
+    // Переменная с количеством правильных ответов.
     let win = 0;
     // Цикл для подсчета правильных ответов.
     while (win < 3) {
     // Блок получения случайных чисел.
-      let numFirst = getRandomInt(1, 999);
-      let numTwo = getRandomInt(1, 999);
+      const numFirst = getRandomInt(1, 999);
+      const numTwo = getRandomInt(1, 999);
+      // Переменная счетчика
+      let i = numFirst;
+      // Определение правильного ответа.
+      while (i > 0) {
+        if (numFirst % i === 0 && numTwo % i === 0) {
+          writeAnswer = i;
+          break;
+        }
+        i -= 1;
+      }
       // Вывод в терминал вопроса.
       console.log(`Question: ${numFirst} ${numTwo} `);
-
-
-      // Определение правильного ответа.
-      while (numFirst !== numTwo) {
-        if (numFirst > numTwo) {
-          writeAnswer = numFirst - numTwo;
-          numFirst =- numTwo;
-        } else {
-          writeAnswer = numTwo - numFirst;
-          numTwo =- numFirst;
-        }
-        return writeAnswer;
-      }
-
-
-
-
-     
       // Получение ответа пользователя.
       const ans = readlineSync.question('Your answer: ');
       /* Условие - если ответ пользователя совпадает с правильным,
-  тогда вывести сообщение: "Correct" и добавить к переменной
-  правильных ответов 1, иначе вывести сообщение об ошибке и
-  сбросить переменную правильных ошибок на ноль. */
-      if (ans === writeAnswer) {
+      тогда вывести сообщение: "Correct" и добавить к переменной
+      правильных ответов 1, иначе вывести сообщение об ошибке и
+      сбросить переменную правильных ошибок на ноль. */
+      if (Number(ans) === writeAnswer) {
         massegeCorrect();
         win += 1;
       } else {
@@ -180,10 +175,10 @@ const brainGcd = () => {
         win = 0;
       }
     }
+    massegeCongratulation();
   };
   gcdGame();
 };
-
 
 // Экспорт функций игр.
 export {
