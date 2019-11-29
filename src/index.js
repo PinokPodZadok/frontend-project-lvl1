@@ -131,8 +131,48 @@ const brainCalc = () => {
 };
 
 //Функция игры brain-gcd
-
-
-
+brainGcd = () => {
+ // Вывод приветствия.
+ massegeWelcome();
+ // Вывод правил игры.
+ console.log('Find the greatest common divisor of given numbers.\n');
+ // Функция игры.
+ const gcdGame = () => {
+  // Переменная с количеством правильных ответов.
+  let win = 0;
+  // Цикл для подсчета правильных ответов.
+  while (win < 3) {
+    // Блок получения случайных операндов и числа для определения знака операции.
+    const numFirst = getRandomInt(1, 999);
+    const numTwo = getRandomInt(1, 999);
+  // Определение правильного ответа
+  while (numFirst !== numTwo) {
+    if (a > b) {
+      writeAnswer = numTwo - numFirst;
+      numTwo =- numFirst; 
+    } else {
+      writeAnswer = numFirst - numTwo;
+      numFirst =- numTwo
+    }
+  }
+  // Вывод в терминал вопроса.
+  console.log(`Question: ${numFirst} ${numTwo} `);
+  // Получение ответа пользователя.
+  const ans = readlineSync.question('Your answer: ');
+  /* Условие - если ответ пользователя совпадает с правильным,
+  тогда вывести сообщение: "Correct" и добавить к переменной
+  правильных ответов 1, иначе вывести сообщение об ошибке и
+  сбросить переменную правильных ошибок на ноль. */
+  if (ans === writeAnswer) {
+      massegeCorrect();
+      win += 1;
+    } else {
+      massegeError(ans, writeAnswer, nameUser);
+      win = 0;
+    }
+  }  
+ }
+ gcdGame();
+};
 // Экспорт функций игр.
 export { brainEven, brainGames, brainCalc, brainGcd };
