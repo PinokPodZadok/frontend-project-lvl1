@@ -129,5 +129,10 @@ const brainCalc = () => {
   // Запуск функции с игрой.
   brainCalcGame();
 };
+
+//Функция игры brain-gcd
+
+
+
 // Экспорт функций игр.
-export { brainEven, brainGames, brainCalc };
+export { brainEven, brainGames, brainCalc, brainGcd };
