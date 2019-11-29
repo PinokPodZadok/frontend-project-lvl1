@@ -3,8 +3,9 @@ import readlineSync from 'readline-sync';
 // Глобальная переменная для хранения имени пользователя.
 let nameUser = 'inkognito';
 // Функция приветствия.
-const massegeWelcome = () => {
-  console.log('Welcome to the Brain Games!');
+const massegeWelcome = (textRule) => {
+  console.log('\nWelcome to the Brain Games!');
+  console.log(textRule);
   nameUser = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${nameUser}!\n`);
 };
@@ -17,15 +18,13 @@ const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(. Correc
 
 // Функция игры brain-games.
 const brainGames = () => {
-  massegeWelcome();
+  massegeWelcome('');
 };
 
 // Функция игры brain-even.
 const brainEven = () => {
-  // Вывод приветствия.
-  massegeWelcome();
-  // Вывод правил игры.
-  console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
+  // Вывод приветствия, правила переданы игры как аргумент.
+  massegeWelcome('Answer "yes" if the number is even, otherwise answer "no".\n');
   // Функция игры.
   const evenGame = () => {
     // Переменная для хранения правильного ответа.
@@ -67,10 +66,8 @@ const brainEven = () => {
 
 // Функция игры brain-calc.
 const brainCalc = () => {
-  // Вывод приветствия.
-  massegeWelcome();
-  // Вывод правил игры.
-  console.log('What is the result of the expression?\n');
+  // Вывод приветствия, правила переданы игры как аргумент.
+  massegeWelcome('What is the result of the expression?\n');
   // Функция игры.
   const brainCalcGame = () => {
     // Переменная для хранения правильного ответа.
@@ -134,10 +131,8 @@ const brainCalc = () => {
 
 // Функция игры brain-gcd
 const brainGcd = () => {
-  // Вывод приветствия.
-  massegeWelcome();
-  // Вывод правил игры.
-  console.log('Find the greatest common divisor of given numbers.\n');
+  // Вывод приветствия, правила переданы игры как аргумент.
+  massegeWelcome('Find the greatest common divisor of given numbers.\n');
   // Функция игры.
   const gcdGame = () => {
     // Переменная для хранения правильного ответа.
