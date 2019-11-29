@@ -143,21 +143,29 @@ const brainGcd = () => {
     let win = 0;
     // Цикл для подсчета правильных ответов.
     while (win < 3) {
-    // Блок получения случайных операндов и числа для определения знака операции.
+    // Блок получения случайных чисел.
       let numFirst = getRandomInt(1, 999);
       let numTwo = getRandomInt(1, 999);
-      // Определение правильного ответа
-      while (numFirst !== numTwo) {
-        if (numFirst > numTwo) {
-          writeAnswer = numTwo - numFirst;
-          numTwo = -numFirst;
-        } else {
-          writeAnswer = numFirst - numTwo;
-          numFirst = -numTwo;
-        }
-      }
       // Вывод в терминал вопроса.
       console.log(`Question: ${numFirst} ${numTwo} `);
+
+
+      // Определение правильного ответа.
+      while (numFirst !== numTwo) {
+        if (numFirst > numTwo) {
+          writeAnswer = numFirst - numTwo;
+          numFirst =- numTwo;
+        } else {
+          writeAnswer = numTwo - numFirst;
+          numTwo =- numFirst;
+        }
+        return writeAnswer;
+      }
+
+
+
+
+     
       // Получение ответа пользователя.
       const ans = readlineSync.question('Your answer: ');
       /* Условие - если ответ пользователя совпадает с правильным,
