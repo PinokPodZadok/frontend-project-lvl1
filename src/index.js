@@ -39,7 +39,11 @@ const brainEven = () => {
       // Вывод в терминал случайного числа.
       console.log(`Question: ${num}`);
       // Определение правильного ответа в зависимости от четности числа.
-      num % 2 === 0 ? writeAnswer = 'yes' : writeAnswer = 'no';
+      if (num % 2 === 0) {
+        writeAnswer = 'yes';
+      } else {
+        writeAnswer = 'no';
+      }
       // Получение ответа пользователя.
       const ans = readlineSync.question('Your answer: ');
       /* Условие - если ответ пользователя совпадает с правильным,
@@ -78,21 +82,21 @@ const brainCalc = () => {
       const numFirst = getRandomInt(1, 999);
       const numTwo = getRandomInt(1, 999);
       // Константа для получения правильного ответа.
-      const result = (intSymbol, numFirst, numTwo) => {
-        if (intSymbol === 1) {
-          return numFirst + numTwo;
-        } if (intSymbol === 2) {
-          return numFirst - numTwo;
+      const result = (symb, first, two) => {
+        if (symb === 1) {
+          return first + two;
+        } if (symb === 2) {
+          return first - two;
         }
-        return numFirst * numTwo;
+        return first * two;
       };
       // Константа для получения символа операции.
-      const symbol = (intSymbol) => {
+      const symbol = (symb) => {
         let sym = '*';
-        if (intSymbol === 1) {
+        if (symb === 1) {
           sym = '+';
         }
-        if (intSymbol === 2) {
+        if (symb === 2) {
           sym = '-';
         }
         return sym;
