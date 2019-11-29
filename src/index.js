@@ -108,10 +108,10 @@ const brainCalc = () => {
       правильных ответов 1, иначе вывести сообщение об ошибке и
       присвоить переменной правильных ответов значение 4,
       для выхода из цикла и завершения игры. */
-      if (ans == writeAnswer) {
+      if (Number(ans) === writeAnswer) {
         massegeCorrect();
         win += 1;
-      } else if (ans != writeAnswer) {
+      } else if (Number(ans) !== writeAnswer) {
         massegeError(ans, writeAnswer, nameUser);
         win = 4;
       }
