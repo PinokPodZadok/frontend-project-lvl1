@@ -25,8 +25,6 @@ const brainGames = () => {
 const brainEven = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('Answer "yes" if the number is even, otherwise answer "no".\n');
-  // Функция игры.
-  const evenGame = () => {
     // Переменная для хранения правильного ответа.
     let writeAnswer = 'unknow';
     // Переменная с количеством правильных ответов.
@@ -59,17 +57,12 @@ const brainEven = () => {
     }
     // Вывести сообщение с поздравлением.
     massegeCongratulation();
-  };
-  // Запуск функции с игрой.
-  evenGame();
 };
 
 // Функция игры brain-calc.
 const brainCalc = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('What is the result of the expression?\n');
-  // Функция игры.
-  const brainCalcGame = () => {
     // Переменная для хранения правильного ответа.
     let writeAnswer = 'unknow';
     // Переменная с количеством правильных ответов.
@@ -125,16 +118,11 @@ const brainCalc = () => {
       massegeCongratulation();
     }
   };
-  // Запуск функции с игрой.
-  brainCalcGame();
-};
 
 // Функция игры brain-gcd
 const brainGcd = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('Find the greatest common divisor of given numbers.\n');
-  // Функция игры.
-  const gcdGame = () => {
     // Переменная для хранения правильного ответа.
     let writeAnswer = 'unknow';
     // Переменная с количеством правильных ответов.
@@ -171,21 +159,43 @@ const brainGcd = () => {
       }
     }
     massegeCongratulation();
-  };
-  gcdGame();
 };
 
-// Функция игры brain-gcd
+// Функция игры brain-progression
 const brainProgression = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('What number is missing in the progression?\n');
-  // Функция игры.
-  const progressionGame = () => {
-
-
-
+ // Переменная для хранения правильного ответа.
+ let writeAnswer = 'unknow';
+ // Переменная с количеством правильных ответов.
+ let win = 0;
+ while (win < 3) {
+ let firstStep = getRandomInt(1, 3);
+ const step = getRandomInt(1, 1);
+ // Цикл для для получения вопроса.
+  for (let i = 10; i < 0; i -= 1) {
+    if (i !== 6) {
+    firstStep += `${step} `;  
+    }
+    firstStep += ".. ";
+    writeAnswer = firstStep + step;
   }
-  progressionGame();
+// Вывод вопроса.
+console.log(`Question: ${firstStep} `);
+// Получение ответа пользователя.
+const ans = readlineSync.question('Your answer: ');
+/* Условие - если ответ пользователя совпадает с правильным,
+тогда вывести сообщение: "Correct" и добавить к переменной
+правильных ответов 1, иначе вывести сообщение об ошибке и
+сбросить переменную правильных ошибок на ноль. */
+if (Number(ans) === writeAnswer) {
+  massegeCorrect();
+  win += 1;
+} else {
+  massegeError(ans, writeAnswer, nameUser);
+  win = 0;
+}
+ }
   };
 
 // Экспорт функций игр.
