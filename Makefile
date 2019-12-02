@@ -16,6 +16,9 @@ start4:
 start5:
 	npx babel-node src/bin/brain-progression.js
 
+start6:
+	npx babel-node src/bin/brain-prime.js
+
 prepublish:
 	npm publish --dry-run
 
