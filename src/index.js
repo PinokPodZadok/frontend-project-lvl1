@@ -175,7 +175,20 @@ const brainGcd = () => {
   gcdGame();
 };
 
+// Функция игры brain-gcd
+const brainProgression = () => {
+  // Вывод приветствия, правила переданы игры как аргумент.
+  massegeWelcome('What number is missing in the progression?\n');
+  // Функция игры.
+  const progressionGame = () => {
+
+
+
+  }
+  progressionGame();
+  };
+
 // Экспорт функций игр.
 export {
-  brainEven, brainGames, brainCalc, brainGcd,
+  brainEven, brainGames, brainCalc, brainGcd, brainProgression
 };
