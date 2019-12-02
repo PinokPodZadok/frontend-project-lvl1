@@ -9,7 +9,7 @@ const massegeWelcome = (textRule) => {
   nameUser = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${nameUser}!\n`);
 };
-// Функция получения случайного числа.
+// Функция получения случайного числа в заданном пределе.
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 // Блок функций для сообщений.
 const massegeCorrect = () => console.log('Correct!');
@@ -170,18 +170,24 @@ const brainProgression = () => {
  // Переменная с количеством правильных ответов.
  let win = 0;
  while (win < 3) {
- let firstStep = getRandomInt(1, 3);
- const step = getRandomInt(1, 1);
+ const firstStep = getRandomInt(1, 999);
+ const step = getRandomInt(1, 9);
  // Цикл для для получения вопроса.
-  for (let i = 10; i < 0; i -= 1) {
+ 
+let stackQuestion = String(firstStep);
+
+ let i = 0;
+  while (i < 10) {
     if (i !== 6) {
-    firstStep += `${step} `;  
-    }
-    firstStep += ".. ";
-    writeAnswer = firstStep + step;
+      stackQuestion += ` ${step}`;
+      i += 1;  
+      }
+      stackQuestion += " ..";
+      writeAnswer = firstStep + step;
+      i += 1;
   }
 // Вывод вопроса.
-console.log(`Question: ${firstStep} `);
+console.log(`Question: ${stackQuestion} `);
 // Получение ответа пользователя.
 const ans = readlineSync.question('Your answer: ');
 /* Условие - если ответ пользователя совпадает с правильным,
