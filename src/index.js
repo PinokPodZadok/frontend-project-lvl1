@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 // Глобальная переменная для хранения имени пользователя.
-let nameUser = 'inkognito';
+let nameUser = 'nameUser';
 // Функция приветствия.
 const massegeWelcome = (textRule) => {
   console.log('\nWelcome to the Brain Games!');
@@ -73,7 +73,7 @@ const brainCalc = () => {
     const intSymbol = getRandomInt(1, 3);
     const numFirst = getRandomInt(1, 999);
     const numTwo = getRandomInt(1, 999);
-    // Константа для получения правильного ответа.
+    // Функция для получения правильного ответа.
     const result = (symb, first, two) => {
       if (symb === 1) {
         return first + two;
@@ -82,7 +82,7 @@ const brainCalc = () => {
       }
       return first * two;
     };
-      // Константа для получения символа операции.
+      // Функция для получения символа операции.
     const symbol = (symb) => {
       let sym = '*';
       if (symb === 1) {
