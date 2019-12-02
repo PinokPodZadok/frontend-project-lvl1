@@ -25,186 +25,193 @@ const brainGames = () => {
 const brainEven = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('Answer "yes" if the number is even, otherwise answer "no".\n');
-    // Переменная для хранения правильного ответа.
-    let writeAnswer = 'unknow';
-    // Переменная с количеством правильных ответов.
-    let win = 0;
-    // Цикл для подсчета правильных ответов.
-    while (win < 3) {
-      // Константа с случайным числом.
-      const num = getRandomInt(1, 999);
-      // Вывод в терминал случайного числа.
-      console.log(`Question: ${num}`);
-      // Определение правильного ответа в зависимости от четности числа.
-      if (num % 2 === 0) {
-        writeAnswer = 'yes';
-      } else {
-        writeAnswer = 'no';
-      }
-      // Получение ответа пользователя.
-      const ans = readlineSync.question('Your answer: ');
-      /* Условие - если ответ пользователя совпадает с правильным,
+  // Переменная для хранения правильного ответа.
+  let writeAnswer = 'unknow';
+  // Переменная с количеством правильных ответов.
+  let win = 0;
+  // Цикл для подсчета правильных ответов.
+  while (win < 3) {
+    // Константа с случайным числом.
+    const num = getRandomInt(1, 999);
+    // Вывод в терминал случайного числа.
+    console.log(`Question: ${num}`);
+    // Определение правильного ответа в зависимости от четности числа.
+    if (num % 2 === 0) {
+      writeAnswer = 'yes';
+    } else {
+      writeAnswer = 'no';
+    }
+    // Получение ответа пользователя.
+    const ans = readlineSync.question('Your answer: ');
+    /* Условие - если ответ пользователя совпадает с правильным,
       тогда вывести сообщение: "Correct" и добавить к переменной
       правильных ответов 1, иначе вывести сообщение об ошибке и
       сбросить переменную правильных ошибок на ноль. */
-      if (ans === writeAnswer) {
-        massegeCorrect();
-        win += 1;
-      } else {
-        massegeError(ans, writeAnswer, nameUser);
-        win = 0;
-      }
+    if (ans === writeAnswer) {
+      massegeCorrect();
+      win += 1;
+    } else {
+      massegeError(ans, writeAnswer, nameUser);
+      win = 0;
     }
-    // Вывести сообщение с поздравлением.
-    massegeCongratulation();
+  }
+  // Вывести сообщение с поздравлением.
+  massegeCongratulation();
 };
 
 // Функция игры brain-calc.
 const brainCalc = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('What is the result of the expression?\n');
-    // Переменная для хранения правильного ответа.
-    let writeAnswer = 'unknow';
-    // Переменная с количеством правильных ответов.
-    let win = 0;
-    // Цикл для подсчета правильных ответов.
-    while (win < 3) {
-      // Блок получения случайных операндов и числа для определения знака операции.
-      const intSymbol = getRandomInt(1, 3);
-      const numFirst = getRandomInt(1, 999);
-      const numTwo = getRandomInt(1, 999);
-      // Константа для получения правильного ответа.
-      const result = (symb, first, two) => {
-        if (symb === 1) {
-          return first + two;
-        } if (symb === 2) {
-          return first - two;
-        }
-        return first * two;
-      };
+  // Переменная для хранения правильного ответа.
+  let writeAnswer = 'unknow';
+  // Переменная с количеством правильных ответов.
+  let win = 0;
+  // Цикл для подсчета правильных ответов.
+  while (win < 3) {
+    // Блок получения случайных операндов и числа для определения знака операции.
+    const intSymbol = getRandomInt(1, 3);
+    const numFirst = getRandomInt(1, 999);
+    const numTwo = getRandomInt(1, 999);
+    // Константа для получения правильного ответа.
+    const result = (symb, first, two) => {
+      if (symb === 1) {
+        return first + two;
+      } if (symb === 2) {
+        return first - two;
+      }
+      return first * two;
+    };
       // Константа для получения символа операции.
-      const symbol = (symb) => {
-        let sym = '*';
-        if (symb === 1) {
-          sym = '+';
-        }
-        if (symb === 2) {
-          sym = '-';
-        }
-        return sym;
-      };
+    const symbol = (symb) => {
+      let sym = '*';
+      if (symb === 1) {
+        sym = '+';
+      }
+      if (symb === 2) {
+        sym = '-';
+      }
+      return sym;
+    };
       // Присвоение глобальной переменной правильного значения.
-      writeAnswer = result(intSymbol, numFirst, numTwo);
-      // Вывод в терминал вопроса.
-      console.log(`Question: ${numFirst} ${symbol(intSymbol)} ${numTwo} `);
-      // Получение ответа пользователя.
-      const ans = readlineSync.question('Your answer: ');
-      /* Если ответ пользователя совпадает с правильным ответом,
+    writeAnswer = result(intSymbol, numFirst, numTwo);
+    // Вывод в терминал вопроса.
+    console.log(`Question: ${numFirst} ${symbol(intSymbol)} ${numTwo} `);
+    // Получение ответа пользователя.
+    const ans = readlineSync.question('Your answer: ');
+    /* Если ответ пользователя совпадает с правильным ответом,
       тогда вывести сообщение: "Correct" и добавить к переменной
       правильных ответов 1, иначе вывести сообщение об ошибке и
       присвоить переменной правильных ответов значение 4,
       для выхода из цикла и завершения игры. */
-      if (Number(ans) === writeAnswer) {
-        massegeCorrect();
-        win += 1;
-      } else if (Number(ans) !== writeAnswer) {
-        massegeError(ans, writeAnswer, nameUser);
-        win = 4;
-      }
+    if (Number(ans) === writeAnswer) {
+      massegeCorrect();
+      win += 1;
+    } else if (Number(ans) !== writeAnswer) {
+      massegeError(ans, writeAnswer, nameUser);
+      win = 4;
     }
-    /* Если переменная количества правильных ответов меньше 4,
+  }
+  /* Если переменная количества правильных ответов меньше 4,
     вывести сообщение с поздравлением. */
-    if (win !== 4) {
-      massegeCongratulation();
-    }
-  };
+  if (win !== 4) {
+    // Вывести сообщение с поздравлением.
+    massegeCongratulation();
+  }
+};
 
 // Функция игры brain-gcd
 const brainGcd = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('Find the greatest common divisor of given numbers.\n');
-    // Переменная для хранения правильного ответа.
-    let writeAnswer = 'unknow';
-    // Переменная с количеством правильных ответов.
-    let win = 0;
-    // Цикл для подсчета правильных ответов.
-    while (win < 3) {
+  // Переменная для хранения правильного ответа.
+  let writeAnswer = 'unknow';
+  // Переменная с количеством правильных ответов.
+  let win = 0;
+  // Цикл для подсчета правильных ответов.
+  while (win < 3) {
     // Блок получения случайных чисел.
-      const numFirst = getRandomInt(1, 999);
-      const numTwo = getRandomInt(1, 999);
-      // Переменная счетчика
-      let i = numFirst;
-      // Определение правильного ответа.
-      while (i > 0) {
-        if (numFirst % i === 0 && numTwo % i === 0) {
-          writeAnswer = i;
-          break;
-        }
-        i -= 1;
+    const numFirst = getRandomInt(1, 999);
+    const numTwo = getRandomInt(1, 999);
+    // Переменная счетчика
+    let i = numFirst;
+    // Определение правильного ответа.
+    while (i > 0) {
+      if (numFirst % i === 0 && numTwo % i === 0) {
+        writeAnswer = i;
+        break;
       }
-      // Вывод в терминал вопроса.
-      console.log(`Question: ${numFirst} ${numTwo} `);
-      // Получение ответа пользователя.
-      const ans = readlineSync.question('Your answer: ');
-      /* Условие - если ответ пользователя совпадает с правильным,
+      i -= 1;
+    }
+    // Вывод в терминал вопроса.
+    console.log(`Question: ${numFirst} ${numTwo} `);
+    // Получение ответа пользователя.
+    const ans = readlineSync.question('Your answer: ');
+    /* Условие - если ответ пользователя совпадает с правильным,
       тогда вывести сообщение: "Correct" и добавить к переменной
       правильных ответов 1, иначе вывести сообщение об ошибке и
       сбросить переменную правильных ошибок на ноль. */
-      if (Number(ans) === writeAnswer) {
-        massegeCorrect();
-        win += 1;
-      } else {
-        massegeError(ans, writeAnswer, nameUser);
-        win = 0;
-      }
+    if (Number(ans) === writeAnswer) {
+      massegeCorrect();
+      win += 1;
+    } else {
+      massegeError(ans, writeAnswer, nameUser);
+      win = 0;
     }
-    massegeCongratulation();
+  }
+  // Вывести сообщение с поздравлением.
+  massegeCongratulation();
 };
 
 // Функция игры brain-progression
 const brainProgression = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('What number is missing in the progression?\n');
- // Переменная для хранения правильного ответа.
- let writeAnswer = 'unknow';
- // Переменная с количеством правильных ответов.
- let win = 0;
- while (win < 3) {
- const firstStep = getRandomInt(1, 999);
- const step = getRandomInt(1, 9);
- // Цикл для для получения вопроса.
- 
-let stackQuestion = String(firstStep);
-
- let i = 0;
-  while (i < 10) {
-    if (i !== 6) {
-      stackQuestion += ` ${step}`;
-      i += 1;  
+  // Переменная для хранения правильного ответа.
+  let writeAnswer = 'unknow';
+  // Переменная с количеством правильных ответов.
+  let win = 0;
+  // Цикл для получения правильных ответов.
+  while (win < 3) {
+    // Константы и переменные для фомирования чисел и шага.
+    const step = getRandomInt(1, 9);
+    let firstStep = getRandomInt(1, 999);
+    let stackQuestion = String(firstStep);
+    writeAnswer = firstStep + (step * 5);
+    // Цикл для для формирования вопроса.
+    for (let i = 1; i < 10; i += 1) {
+      /* Условие - если i = 5, тогда заменяем символ на " ..",
+        добавляем к основному числу шаг, иначе в добавлям к строке символ
+        основного числа плюс шаг и добавляем к основному числу шаг.
+      */
+      if (i === 5) {
+        stackQuestion += ' ..';
+        firstStep += step;
       }
-      stackQuestion += " ..";
-      writeAnswer = firstStep + step;
-      i += 1;
+      stackQuestion = `${stackQuestion} ${firstStep + step}`;
+      firstStep += step;
+    }
+    // Вывод вопроса.
+    console.log(`Question: ${stackQuestion} `);
+    // Получение ответа пользователя.
+    const ans = readlineSync.question('Your answer: ');
+    /* Условие - если ответ пользователя совпадает с правильным,
+      тогда вывести сообщение: "Correct" и добавить к переменной
+      правильных ответов 1, иначе вывести сообщение об ошибке и
+      сбросить переменную правильных ошибок на ноль. */
+    if (Number(ans) === writeAnswer) {
+      massegeCorrect();
+      win += 1;
+    } else {
+      massegeError(ans, writeAnswer, nameUser);
+      win = 0;
+    }
   }
-// Вывод вопроса.
-console.log(`Question: ${stackQuestion} `);
-// Получение ответа пользователя.
-const ans = readlineSync.question('Your answer: ');
-/* Условие - если ответ пользователя совпадает с правильным,
-тогда вывести сообщение: "Correct" и добавить к переменной
-правильных ответов 1, иначе вывести сообщение об ошибке и
-сбросить переменную правильных ошибок на ноль. */
-if (Number(ans) === writeAnswer) {
-  massegeCorrect();
-  win += 1;
-} else {
-  massegeError(ans, writeAnswer, nameUser);
-  win = 0;
-}
- }
-  };
+  // Вывести сообщение с поздравлением.
+  massegeCongratulation();
+};
 
 // Экспорт функций игр.
 export {
-  brainEven, brainGames, brainCalc, brainGcd, brainProgression
+  brainEven, brainGames, brainCalc, brainGcd, brainProgression,
 };
