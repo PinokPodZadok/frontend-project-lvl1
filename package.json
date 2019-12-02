@@ -1,7 +1,14 @@
 {
   "name": "smirnovfrontend-project-lvl1",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.1.1",
+  "description": "brain-games",
+  "keywords": [
+    "brain-even",
+    "brain-calc",
+    "brain-gcd",
+    "brain-progression",
+    "brain-prime"
+  ],
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
