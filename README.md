@@ -11,3 +11,6 @@ https://asciinema.org/a/IqaL8Cl6SooiTVZotjB2A5b7E
 
 instruction brain-gcd
 https://asciinema.org/a/hr5Awy8NAlUoJg2nikOWMcuVO
+
+instruction brain-progression
+https://asciinema.org/a/xkky8T4y0ZEmrCg3ycmMV78y0
