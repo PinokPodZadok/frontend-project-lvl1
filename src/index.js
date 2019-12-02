@@ -174,7 +174,7 @@ const brainProgression = () => {
   // Цикл для получения правильных ответов.
   while (win < 3) {
     // Константы и переменные для фомирования чисел и шага.
-    const step = getRandomInt(1, 9);
+    const step = getRandomInt(1, 10);
     let firstStep = getRandomInt(1, 999);
     let stackQuestion = String(firstStep);
     writeAnswer = firstStep + (step * 5);
