@@ -226,26 +226,22 @@ const brainPrime = () => {
     // Вывод в терминал случайного числа.
     console.log(`Question: ${num}`);
     // Определение правильного ответа в зависимости от четности числа.
-    if (num !== 1) {
-      for (let index = 2; index < num -1; index =+ 1) {
-        if (num % index === 0) {
-          return writeAnswer = 'no';
-        }
-        return writeAnswer = 'yes';
-      }
-      writeAnswer = 'no';
-    }
-
-
-
-
-
-
-    /*if (num % 2 === 0) {
-      writeAnswer = 'yes';
+    if (num === 1) {
+      writeAnswer = false;
     } else {
+      let index = 2;
+      while (index < num - 1) {
+        if (num % index === 0) {
+          writeAnswer = false;
+      }
+      index += 1;
+    }
+    if (writeAnswer === false) {
       writeAnswer = 'no';
-    }*/
+    } else { 
+      writeAnswer = 'yes';
+    }
+  }
     // Получение ответа пользователя.
     const ans = readlineSync.question('Your answer: ');
     /* Условие - если ответ пользователя совпадает с правильным,
