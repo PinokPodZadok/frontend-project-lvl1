@@ -233,15 +233,15 @@ const brainPrime = () => {
       while (index < num - 1) {
         if (num % index === 0) {
           writeAnswer = false;
+        }
+        index += 1;
       }
-      index += 1;
+      if (writeAnswer === false) {
+        writeAnswer = 'no';
+      } else {
+        writeAnswer = 'yes';
+      }
     }
-    if (writeAnswer === false) {
-      writeAnswer = 'no';
-    } else { 
-      writeAnswer = 'yes';
-    }
-  }
     // Получение ответа пользователя.
     const ans = readlineSync.question('Your answer: ');
     /* Условие - если ответ пользователя совпадает с правильным,
@@ -262,5 +262,5 @@ const brainPrime = () => {
 
 // Экспорт функций игр.
 export {
-  brainEven, brainGames, brainCalc, brainGcd, brainProgression, brainPrime
+  brainGames, brainEven, brainCalc, brainGcd, brainProgression, brainPrime,
 };
