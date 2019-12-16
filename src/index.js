@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 // Глобальная переменная для хранения имени пользователя.
 let nameUser = 'nameUser';
 // Функция приветствия.
-const massegeWelcome = (textRule) => {
+export const massegeWelcome = (textRule) => {
   console.log('\nWelcome to the Brain Games!');
   console.log(textRule);
   nameUser = readlineSync.question('May I have your name? ');
@@ -17,10 +17,10 @@ const massegeCongratulation = () => console.log(`Congratulations, ${nameUser}!`)
 const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(. Correct answer was '${b}'.\nLet's try again, ${c}!`);
 
 // Функция игры brain-games.
-const brainGames = () => {
+/*const brainGames = () => {
   massegeWelcome('');
 };
-
+*/
 // Функция игры brain-even.
 const brainEven = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
@@ -262,5 +262,5 @@ const brainPrime = () => {
 
 // Экспорт функций игр.
 export {
-  brainGames, brainEven, brainCalc, brainGcd, brainProgression, brainPrime,
+  brainEven, brainCalc, brainGcd, brainProgression, brainPrime,
 };
