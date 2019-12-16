@@ -10,11 +10,11 @@ export const massegeWelcome = (textRule) => {
   console.log(`Hello, ${nameUser}!\n`);
 };
 // Функция получения случайного числа в заданном пределе.
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+export const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 // Блок функций для сообщений.
-const massegeCorrect = () => console.log('Correct!');
-const massegeCongratulation = () => console.log(`Congratulations, ${nameUser}!`);
-const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(. Correct answer was '${b}'.\nLet's try again, ${c}!`);
+export const massegeCorrect = () => console.log('Correct!');
+export const massegeCongratulation = () => console.log(`Congratulations, ${nameUser}!`);
+export const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(. Correct answer was '${b}'.\nLet's try again, ${c}!`);
 
 // Функция игры brain-games.
 /*const brainGames = () => {
@@ -22,7 +22,7 @@ const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(. Correc
 };
 */
 // Функция игры brain-even.
-const brainEven = () => {
+/*const brainEven = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('Answer "yes" if the number is even, otherwise answer "no".\n');
   // Переменная для хранения правильного ответа.
@@ -43,10 +43,10 @@ const brainEven = () => {
     }
     // Получение ответа пользователя.
     const ans = readlineSync.question('Your answer: ');
-    /* Условие - если ответ пользователя совпадает с правильным,
+     Условие - если ответ пользователя совпадает с правильным,
       тогда вывести сообщение: "Correct" и добавить к переменной
       правильных ответов 1, иначе вывести сообщение об ошибке и
-      сбросить переменную правильных ошибок на ноль. */
+      сбросить переменную правильных ошибок на ноль. 
     if (ans === writeAnswer) {
       massegeCorrect();
       win += 1;
@@ -58,7 +58,7 @@ const brainEven = () => {
   // Вывести сообщение с поздравлением.
   massegeCongratulation();
 };
-
+*/
 // Функция игры brain-calc.
 const brainCalc = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
@@ -262,5 +262,5 @@ const brainPrime = () => {
 
 // Экспорт функций игр.
 export {
-  brainEven, brainCalc, brainGcd, brainProgression, brainPrime,
+  brainCalc, brainGcd, brainProgression, brainPrime,
 };

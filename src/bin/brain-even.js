@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { brainEven } from '../index';
+import { brainEven } from '../games/brainEven';
 
 brainEven();
