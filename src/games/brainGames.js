@@ -1,8 +1,6 @@
-import { massegeWelcome } from '../index';
+import * as eng from '../engine';
 // Функция игры brain-games.
 const brainGames = () => {
-  // eslint-disable-next-line no-undef
-  massegeWelcome('');
+  eng.massegeWelcome('');
 };
-// eslint-disable-next-line import/prefer-default-export
-export { brainGames };
+export default brainGames;
