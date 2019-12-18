@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import * as eng from '../engine';
-// eslint-disable-next-line import/prefer-default-export
+import * as engine from '../engine';
+
 const brainEven = () => {
-  eng.massegeWelcome('Answer "yes" if the number is even, otherwise answer "no".\n');
+  engine.massegeWelcome('Answer "yes" if the number is even, otherwise answer "no".\n');
 
   let writeAnswer = 'unknow';
   // Переменная с количеством правильных ответов.
@@ -10,7 +10,7 @@ const brainEven = () => {
   // Цикл для подсчета правильных ответов.
   while (win < 3) {
     // Константа с случайным числом.
-    const num = eng.getRandomInt(1, 999);
+    const num = engine.getRandomInt(1, 999);
     // Вывод в терминал случайного числа.
     console.log(`Question: ${num}`);
     // Определение правильного ответа в зависимости от четности числа.
@@ -26,14 +26,14 @@ const brainEven = () => {
       правильных ответов 1, иначе вывести сообщение об ошибке и
       сбросить переменную правильных ошибок на ноль.  */
     if (ans === writeAnswer) {
-      eng.massegeCorrect();
+      engine.massegeCorrect();
       win += 1;
     } else {
-      eng.massegeError(ans, writeAnswer, eng.nameUser);
+      engine.massegeError(ans, writeAnswer);
       win = 0;
     }
   }
   // Вывести сообщение с поздравлением.
-  eng.massegeCongratulation();
+  engine.massegeCongratulation();
 };
 export default brainEven;

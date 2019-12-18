@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import * as eng from '../engine';
+import * as engine from '../engine';
 
 const brainCalc = () => {
-  eng.massegeWelcome('What is the result of the expression?\n');
+  engine.massegeWelcome('What is the result of the expression?\n');
   // Переменная для хранения правильного ответа.
   let writeAnswer = 'unknow';
   // Переменная с количеством правильных ответов.
@@ -10,9 +10,9 @@ const brainCalc = () => {
   // Цикл для подсчета правильных ответов.
   while (win < 3) {
     // Блок получения случайных операндов и числа для определения знака операции.
-    const intSymbol = eng.getRandomInt(1, 3);
-    const numFirst = eng.getRandomInt(1, 999);
-    const numTwo = eng.getRandomInt(1, 999);
+    const intSymbol = engine.getRandomInt(1, 3);
+    const numFirst = engine.getRandomInt(1, 999);
+    const numTwo = engine.getRandomInt(1, 999);
     // Функция для получения правильного ответа.
     const result = (symb, first, two) => {
       if (symb === 1) {
@@ -45,10 +45,10 @@ const brainCalc = () => {
       присвоить переменной правильных ответов значение 4,
       для выхода из цикла и завершения игры. */
     if (Number(ans) === writeAnswer) {
-      eng.massegeCorrect();
+      engine.massegeCorrect();
       win += 1;
     } else if (Number(ans) !== writeAnswer) {
-      eng.massegeError(ans, writeAnswer, eng.nameUser);
+      engine.massegeError(ans, writeAnswer);
       win = 4;
     }
   }
@@ -56,7 +56,7 @@ const brainCalc = () => {
     вывести сообщение с поздравлением. */
   if (win !== 4) {
     // Вывести сообщение с поздравлением.
-    eng.massegeCongratulation();
+    engine.massegeCongratulation();
   }
 };
 export default brainCalc;

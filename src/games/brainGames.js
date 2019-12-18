@@ -1,6 +1,6 @@
-import * as eng from '../engine';
+import * as engine from '../engine';
 // Функция игры brain-games.
 const brainGames = () => {
-  eng.massegeWelcome('');
+  engine.massegeWelcome('');
 };
 export default brainGames;

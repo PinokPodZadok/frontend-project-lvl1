@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
-import * as eng from '../engine';
+import * as engine from '../engine';
 
 const brainGcd = () => {
 // Вывод приветствия, правила переданы игры как аргумент.
-  eng.massegeWelcome('Find the greatest common divisor of given numbers.\n');
+  engine.massegeWelcome('Find the greatest common divisor of given numbers.\n');
   // Переменная для хранения правильного ответа.
   let writeAnswer = 'unknow';
   // Переменная с количеством правильных ответов.
@@ -11,8 +11,8 @@ const brainGcd = () => {
   // Цикл для подсчета правильных ответов.
   while (win < 3) {
   // Блок получения случайных чисел.
-    const numFirst = eng.getRandomInt(1, 999);
-    const numTwo = eng.getRandomInt(1, 999);
+    const numFirst = engine.getRandomInt(1, 999);
+    const numTwo = engine.getRandomInt(1, 999);
     // Переменная счетчика
     let i = numFirst;
     // Определение правильного ответа.
@@ -32,14 +32,14 @@ const brainGcd = () => {
         правильных ответов 1, иначе вывести сообщение об ошибке и
         сбросить переменную правильных ошибок на ноль. */
     if (Number(ans) === writeAnswer) {
-      eng.massegeCorrect();
+      engine.massegeCorrect();
       win += 1;
     } else {
-      eng.massegeError(ans, writeAnswer, eng.nameUser);
+      engine.massegeError(ans, writeAnswer);
       win = 0;
     }
   }
   // Вывести сообщение с поздравлением.
-  eng.massegeCongratulation();
+  engine.massegeCongratulation();
 };
 export default brainGcd;

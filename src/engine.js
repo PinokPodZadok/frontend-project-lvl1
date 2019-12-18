@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
-// Глобальная переменная для хранения имени пользователя.
-export let nameUser = 'unknow';
+// Переменная для хранения имени пользователя.
+let nameUser = 'unknow';
 
 // Функция приветствия.
 export const massegeWelcome = (textRule) => {
@@ -14,4 +14,4 @@ export const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)
 // Блок функций для сообщений.
 export const massegeCorrect = () => console.log('Correct!');
 export const massegeCongratulation = () => console.log(`Congratulations, ${nameUser}!`);
-export const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(. Correct answer was '${b}'.\nLet's try again, ${c}!`);
+export const massegeError = (a, b) => console.log(`'${a}' is wrong answer ;(. Correct answer was '${b}'.\nLet's try again, ${nameUser}!`);
