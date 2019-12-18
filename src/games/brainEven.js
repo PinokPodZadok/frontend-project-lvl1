@@ -2,8 +2,9 @@ import readlineSync from 'readline-sync';
 import * as engine from '../engine';
 
 const brainEven = () => {
+  // Вывод приветствия, правила игры переданы как аргумент.
   engine.massegeWelcome('Answer "yes" if the number is even, otherwise answer "no".\n');
-
+  // Переменная для хранения правильного ответа.
   let writeAnswer = 'unknow';
   // Переменная с количеством правильных ответов.
   let win = 0;

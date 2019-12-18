@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import * as engine from '../engine';
 
 const brainPrime = () => {
-  // Вывод приветствия, правила переданы игры как аргумент.
+  // Вывод приветствия, правила игры переданы как аргумент.
   engine.massegeWelcome('Answer "yes" if given number is prime. Otherwise answer "no".\n');
   // Переменная для хранения правильного ответа.
   let writeAnswer = 'unknow';

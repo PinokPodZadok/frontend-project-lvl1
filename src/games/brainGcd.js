@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import * as engine from '../engine';
 
 const brainGcd = () => {
-// Вывод приветствия, правила переданы игры как аргумент.
+  // Вывод приветствия, правила игры переданы как аргумент.
   engine.massegeWelcome('Find the greatest common divisor of given numbers.\n');
   // Переменная для хранения правильного ответа.
   let writeAnswer = 'unknow';

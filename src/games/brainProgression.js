@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import * as engine from '../engine';
 
 const brainProgression = () => {
-  // Вывод приветствия, правила переданы игры как аргумент.
+  // Вывод приветствия, правила игры переданы как аргумент.
   engine.massegeWelcome('What number is missing in the progression?\n');
   // Переменная для хранения правильного ответа.
   let writeAnswer = 'unknow';
