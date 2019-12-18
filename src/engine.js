@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 // Глобальная переменная для хранения имени пользователя.
-let nameUser = 'nameUser';
+export let nameUser = 'unknow';
+
 // Функция приветствия.
 export const massegeWelcome = (textRule) => {
   console.log('\nWelcome to the Brain Games!');
