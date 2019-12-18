@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import * as eng from '../engine';
 // eslint-disable-next-line import/prefer-default-export
-export const brainEven = () => {
+const brainEven = () => {
   eng.massegeWelcome('Answer "yes" if the number is even, otherwise answer "no".\n');
 
   let writeAnswer = 'unknow';
@@ -36,3 +36,4 @@ export const brainEven = () => {
   // Вывести сообщение с поздравлением.
   eng.massegeCongratulation();
 };
+export default brainEven;

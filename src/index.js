@@ -17,12 +17,12 @@ export const massegeCongratulation = () => console.log(`Congratulations, ${nameU
 export const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(. Correct answer was '${b}'.\nLet's try again, ${c}!`);
 
 // Функция игры brain-games.
-/*const brainGames = () => {
+/* const brainGames = () => {
   massegeWelcome('');
 };
 */
 // Функция игры brain-even.
-/*const brainEven = () => {
+/* const brainEven = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
   massegeWelcome('Answer "yes" if the number is even, otherwise answer "no".\n');
   // Переменная для хранения правильного ответа.
@@ -46,7 +46,7 @@ export const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(.
      Условие - если ответ пользователя совпадает с правильным,
       тогда вывести сообщение: "Correct" и добавить к переменной
       правильных ответов 1, иначе вывести сообщение об ошибке и
-      сбросить переменную правильных ошибок на ноль. 
+      сбросить переменную правильных ошибок на ноль.
     if (ans === writeAnswer) {
       massegeCorrect();
       win += 1;
@@ -58,7 +58,7 @@ export const massegeError = (a, b, c) => console.log(`'${a}' is wrong answer ;(.
   // Вывести сообщение с поздравлением.
   massegeCongratulation();
 };
-*/
+
 // Функция игры brain-calc.
 const brainCalc = () => {
   // Вывод приветствия, правила переданы игры как аргумент.
@@ -99,11 +99,11 @@ const brainCalc = () => {
     console.log(`Question: ${numFirst} ${symbol(intSymbol)} ${numTwo} `);
     // Получение ответа пользователя.
     const ans = readlineSync.question('Your answer: ');
-    /* Если ответ пользователя совпадает с правильным ответом,
+     Если ответ пользователя совпадает с правильным ответом,
       тогда вывести сообщение: "Correct" и добавить к переменной
       правильных ответов 1, иначе вывести сообщение об ошибке и
       присвоить переменной правильных ответов значение 4,
-      для выхода из цикла и завершения игры. */
+      для выхода из цикла и завершения игры.
     if (Number(ans) === writeAnswer) {
       massegeCorrect();
       win += 1;
@@ -112,8 +112,8 @@ const brainCalc = () => {
       win = 4;
     }
   }
-  /* Если переменная количества правильных ответов меньше 4,
-    вывести сообщение с поздравлением. */
+   Если переменная количества правильных ответов меньше 4,
+    вывести сообщение с поздравлением.
   if (win !== 4) {
     // Вывести сообщение с поздравлением.
     massegeCongratulation();
@@ -147,10 +147,10 @@ const brainGcd = () => {
     console.log(`Question: ${numFirst} ${numTwo} `);
     // Получение ответа пользователя.
     const ans = readlineSync.question('Your answer: ');
-    /* Условие - если ответ пользователя совпадает с правильным,
+    Условие - если ответ пользователя совпадает с правильным,
       тогда вывести сообщение: "Correct" и добавить к переменной
       правильных ответов 1, иначе вывести сообщение об ошибке и
-      сбросить переменную правильных ошибок на ноль. */
+      сбросить переменную правильных ошибок на ноль.
     if (Number(ans) === writeAnswer) {
       massegeCorrect();
       win += 1;
@@ -180,10 +180,10 @@ const brainProgression = () => {
     writeAnswer = firstStep + (step * 5);
     // Цикл для для формирования вопроса.
     for (let i = 1; i < 10; i += 1) {
-      /* Условие - если i = 5, тогда заменяем символ на " ..",
+      Условие - если i = 5, тогда заменяем символ на " ..",
         добавляем к основному числу шаг, иначе в добавлям к строке символ
         основного числа плюс шаг и добавляем к основному числу шаг.
-      */
+
       if (i === 5) {
         stackQuestion += ' ..';
         firstStep += step;
@@ -195,10 +195,10 @@ const brainProgression = () => {
     console.log(`Question: ${stackQuestion} `);
     // Получение ответа пользователя.
     const ans = readlineSync.question('Your answer: ');
-    /* Условие - если ответ пользователя совпадает с правильным,
+    Условие - если ответ пользователя совпадает с правильным,
       тогда вывести сообщение: "Correct" и добавить к переменной
       правильных ответов 1, иначе вывести сообщение об ошибке и
-      сбросить переменную правильных ошибок на ноль. */
+      сбросить переменную правильных ошибок на ноль.
     if (Number(ans) === writeAnswer) {
       massegeCorrect();
       win += 1;
@@ -244,10 +244,10 @@ const brainPrime = () => {
     }
     // Получение ответа пользователя.
     const ans = readlineSync.question('Your answer: ');
-    /* Условие - если ответ пользователя совпадает с правильным,
+    Условие - если ответ пользователя совпадает с правильным,
       тогда вывести сообщение: "Correct" и добавить к переменной
       правильных ответов 1, иначе вывести сообщение об ошибке и
-      сбросить переменную правильных ошибок на ноль. */
+      сбросить переменную правильных ошибок на ноль.
     if (ans === writeAnswer) {
       massegeCorrect();
       win += 1;
@@ -262,5 +262,5 @@ const brainPrime = () => {
 
 // Экспорт функций игр.
 export {
-  brainCalc, brainGcd, brainProgression, brainPrime,
-};
+  brainGcd, brainProgression, brainPrime,
+}; */
